@@ -8,51 +8,32 @@
   <title>css bayan</title>
 </head>
 
-<input>
 
 <h1>CSS Bayan</h1>
 <div class="bayan">
   <details>
-    <summary>Oh my <span></span></summary>
+    <summary><p>Oh my </p><span></span></summary>
     <img src="6i5g81.jpg" alt="">
   </details>
   <details>
-    <summary>Small change <span></span></summary>
+    <summary><p>Small change </p><span></span></summary>
     <img src="8536ab12069c95399cfd1cf59fc34305.png" alt="">
   </details>
   <details>
-    <summary>Margin 0 <span></span></summary>
+    <summary><p>Margin 0 </p><span></span></summary>
     <img src="download (1).jfif" alt="">
   </details>
   <details open>
-    <summary>Add CSS <span></span></summary>
+    <summary><p>Add CSS</p> <span></span></summary>
     <img src="download.jfif" alt="">
   </details>
   <details>
-    <summary>Frontend and backend <span></span></summary>
+    <summary><p>Frontend and backend </p><span></span></summary>
     <img src="front-end-back-end-500-error.jpg" alt="">
   </details>
 </div>
 
-<input type="checkbox" id="e">
-<label for="e">oh my</label>
-<img src="6i5g81.jpg" alt="">
-</input>
-
-
-
 <style>
-  img {
-    display: none;
-  }
-
-  input {
-    display: none;
-  }
-
-  input:checked img {
-    display: block;
-  }
 
   * {
     margin: 0;
@@ -69,76 +50,70 @@
 
   .bayan,
   h1 {
-    max-width: 90%;
-    margin: 1rem 2rem;
+    max-width: 90vw;
+    margin: 1rem auto;
   }
 
   details {
     border-top: 0.1rem gray solid;
-
-  }
-
-  details[open]>summary {}
-
-  details[open]>summary span {
-    transform: rotate(45deg);
-  }
-
-  details[open] img {
-    animation: scale .5s ease;
   }
 
   summary {
+    display: flex;
+    justify-content: space-between;
     list-style-type: none;
+    padding: 0.7rem 1.5rem;
+  }
+
+  summary p{
     font-size: 2rem;
     font-weight: 700;
-    padding: 0.7rem 1.5rem;
-    position: relative;
   }
 
   span {
     display: none;
   }
 
-  /*
   img {
     display: block;
     max-height: 45rem;
-    max-width: 100%;
+    max-width: 90vw;
+    min-width: 25rem;
     margin: 2rem auto;
-  }*/
+    transition: 13s;
+  }
 
+  span {
+    display: flex;
+    height: 2rem;
+    width: 2rem;
+    background-image: url(plus-icon.svg);
+    background-position: 0 0;
+    background-size: 1.6rem 1.6rem;
+    background-repeat: no-repeat;
+    transition: .7s;
+  }
+   
+  details[open] > summary span {
+    transform: rotate(45deg);
+  }
 
-  @keyframes scale {
-    from {
-      transform: scale(0.5);
-    }
+  details[open] > img{
+    animation: slide .3s ease-in-out;
+  }
 
-    to {
-      transform: scale(1);
-    }
+  @keyframes slide {
+    0%    {transform: scale(0.5); }
+    100%  {transform: scale(1); }
+  }
+
+  @media screen and (min-width: 820px) {
+    /* any style */
   }
 
   @media screen and (min-width: 1200px) {
     details:hover {
       cursor: pointer;
-    }
-
-    details:hover img {
-      display: block;
-    }
-
-    .bayan:hover span {
-      display: flex;
-      height: 2rem;
-      width: 2rem;
-      position: absolute;
-      right: 0;
-      top: 30%;
-      background-image: url(plus-icon.svg);
-      background-position: 0 0;
-      background-size: 1.6rem 1.6rem;
-      background-repeat: no-repeat;
     }
   }
 </style>
